@@ -1,6 +1,6 @@
 {
   "name": "@stechy1/schematics",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Collection of custom schematics for easier creating CQRS structure in NestJS project.",
   "files": [
     "dist/**/*"
