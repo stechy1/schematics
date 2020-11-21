@@ -9,7 +9,6 @@ export function createNrwlLibrary(root: string | undefined, prefix: string | und
       }),
       (tree: Tree) => {
         tree.delete(`${root}/${name}/${type}/src/lib/${name}-${type}.ts`)
-        // tree.delete(`${root}/${name}/${type}/src/lib/${name}-${type}.spec.ts`)
         tree.delete(`${root}/${name}/${type}/src/index.ts`)
       },
     ])(host, context);
