@@ -1,29 +1,26 @@
+name: build
+
 on:
   push:
-    # Sequence of patterns matched against refs/tags
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
-name: Create Release
+      - 'v*'
 
 jobs:
   build:
-    name: Create Release
-    runs-on: ubuntu-latest
+
+    runs-on: ubuntu-18.04
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@master
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      - uses: actions/checkout@main
+      - name: Use Node.js 12.18.3
+        uses: actions/setup-node@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
-          prerelease: false
+          node-version: 12.18.3
+      - name: Install dependencies
+        run: npm install
+      - name: Lint
+        run: npm run affected:lint
+      - name: Release
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
