@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "typeRoots": ["node_modules/@types"],
+    "rootDir": ".",
+    "outDir": "dist",
+    "declaration": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "skipLibCheck": true
+  },
+  "include": ["src", "src/collection.json"],
+  "exclude": ["node_modules", "src/**/files/**"]
+}

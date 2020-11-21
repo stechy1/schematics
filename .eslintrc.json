@@ -1,0 +1,57 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint/eslint-plugin"
+  ],
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-use-before-define": "off"
+  }
+  //
+//  "plugins": ["@nrwl/nx"],
+//  "overrides": [
+//    {
+//      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+//      "rules": {
+//        "@nrwl/nx/enforce-module-boundaries": [
+//          "error",
+//          {
+//            "enforceBuildableLibDependency": true,
+//            "allow": [],
+//            "depConstraints": [
+//              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+//            ]
+//          }
+//        ]
+//      }
+//    },
+//    {
+//      "files": ["*.ts", "*.tsx"],
+//      "extends": ["plugin:@nrwl/nx/typescript"],
+//      "parserOptions": { "project": "./tsconfig.*?.json" },
+//      "rules": {}
+//    },
+//    {
+//      "files": ["*.js", "*.jsx"],
+//      "extends": ["plugin:@nrwl/nx/javascript"],
+//      "rules": {}
+//    }
+//  ]
+}

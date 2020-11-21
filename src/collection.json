@@ -1,0 +1,25 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "nest-lib": {
+      "description": "Parent of nest-lib schematics",
+      "factory": "./lib/nest-lib/nest-lib.factory#main",
+      "schema": "./lib/nest-lib/schema.json"
+    },
+    "nest-lib-application": {
+      "description": "Create nest-lib-application part",
+      "factory": "./lib/nest-lib-application/nest-lib-application.factory#main",
+      "schema": "./lib/nest-lib-application/schema.json"
+    },
+    "nest-lib-domain": {
+      "description": "Create nest-lib-domain part",
+      "factory": "./lib/nest-lib-domain/nest-lib-domain.factory#main",
+      "schema": "./lib/nest-lib-domain/schema.json"
+    },
+    "nest-lib-infrastructure": {
+      "description": "Create nest-lib-infrastructure part",
+      "factory": "./lib/nest-lib-infrastructure/nest-lib-infrastructure.factory#main",
+      "schema": "./lib/nest-lib-infrastructure/schema.json"
+    }
+  }
+}
