@@ -1,8 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common';
 
-import { StimLibDomaFacade } from '../service/<%= dasherize(name) %>.facade';
+import { <%= classify(name) %>Facade } from '../service/<%= dasherize(name) %>.facade';
 
-@Injectable()
+@Controller()
 export class <%= classify(name) %>Controller {
   private readonly logger = new Logger(<%= classify(name) %>Controller.name);
 
