@@ -20,7 +20,7 @@
   "schematics": "./dist/collection.json",
   "dependencies": {
     "@angular-devkit/core": "^10.1.4",
-    "@angular-devkit/schematics": "^10.1.4",
+    "@angular-devkit/schematics": "^11.2.2",
     "@nestjs/schematics": "^7.2.2",
     "@nrwl/workspace": "^10.4.4"
   },
