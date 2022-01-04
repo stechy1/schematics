@@ -2,56 +2,53 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "tsconfig.json",
-    "sourceType": "module"
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.*?.json"
   },
+  "ignorePatterns": ["**/*"],
   "plugins": [
-    "@typescript-eslint/eslint-plugin"
+    "@typescript-eslint"
   ],
   "extends": [
+    "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/@typescript-eslint"
+    "prettier"
+  ],
+  "rules": {},
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "@typescript-eslint/explicit-member-accessibility": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-parameter-properties": "off",
+        "quotes": ["error", "single"],
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "warn",
+          { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+        ]
+      }
+    },
+    {
+      "files": ["./jest/*.[j|t]s"]
+    },
+    {
+      "files": ["*.spec.ts", "*.jest.ts"],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
   ],
   "env": {
-    "node": true
-  },
-  "rules": {
-    "@typescript-eslint/interface-name-prefix": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-use-before-define": "off"
+    "node": true,
+    "jest": true
   }
-  //
-//  "plugins": ["@nrwl/nx"],
-//  "overrides": [
-//    {
-//      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-//      "rules": {
-//        "@nrwl/nx/enforce-module-boundaries": [
-//          "error",
-//          {
-//            "enforceBuildableLibDependency": true,
-//            "allow": [],
-//            "depConstraints": [
-//              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
-//            ]
-//          }
-//        ]
-//      }
-//    },
-//    {
-//      "files": ["*.ts", "*.tsx"],
-//      "extends": ["plugin:@nrwl/nx/typescript"],
-//      "parserOptions": { "project": "./tsconfig.*?.json" },
-//      "rules": {}
-//    },
-//    {
-//      "files": ["*.js", "*.jsx"],
-//      "extends": ["plugin:@nrwl/nx/javascript"],
-//      "rules": {}
-//    }
-//  ]
 }

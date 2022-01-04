@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "nest-lib-infrastructure",
+  "$id": "nest-lib-infrastructure",
   "type": "object",
   "properties": {
     "name": {
